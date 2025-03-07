@@ -4,9 +4,11 @@ export default function Grid({ size }) {
   const [selected, setSelected] = useState(""); //initially selected is null
 
   const handleClick = (index) => {
+
+    if (selected[index] === "red") return;   //if selected is red the return
     const rowInd = Math.floor(index / size);
     const colInd = index % size;
-    const newSelected = Array(size * size); //new array with length of size
+    const newSelected = [...selected]; 
 
     //  row
     for (let i = rowInd * size; i < rowInd * size + size; i++) {
@@ -17,10 +19,8 @@ export default function Grid({ size }) {
     for (let i = colInd; i < size * size; i += size) {
       newSelected[i] = "red";
     }
-
-    //  diagonals
-    //main-diagonal bottom
-    for (let i = index; i < size * size; i += size + 1) {
+     //main-diagonal bottom
+     for (let i = index; i < size * size; i += size + 1) {
       if (Math.floor(i / size) - rowInd === (i % size) - colInd) {
         newSelected[i] = "red";
       }
@@ -74,6 +74,7 @@ export default function Grid({ size }) {
     </div>
   );
 }
+        
 
 // import React, { useState } from "react";
 
@@ -136,5 +137,6 @@ export default function Grid({ size }) {
 //         <div class="item"></div>
 //         </div>
 //     )
-// }         
+// }   
+
 
