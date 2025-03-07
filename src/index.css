@@ -1,57 +1,66 @@
- body {
+body {
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-} 
-label {
-  font-size: 20px;
-  font-family: sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  flex-direction: column;
 }
-.search{
-  display: flex;
-  gap: 10px;
-  margin-bottom: 2rem;
+
+.search {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 input {
-  padding: 10px;
+  padding: 8px;
+  margin: 10px;
   font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .button {
-  padding: 10px;
+  padding: 8px 16px;
   font-size: 16px;
-  margin-left: 10px;
-  cursor: pointer;
-  background-color: black;
   color: white;
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
- .grid-container {
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr); */
-  min-width: 500px;
-  min-height: 500px;
-  height: 100%;
-  width: 100%;
-  margin: auto;
+
+.grid-container {
+  display: grid;
+  margin-top: 20px;
 }
 
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.13);
-  font-size: 18px;
-  border: 1.5px solid black;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
   cursor: pointer;
-
-}  
-
-/* .grid-item .red {
-  background-color: red;
 }
-.blue{
-  background-color: blue;
-} */
-  
+
+
+.grid-item[style*="background-color: red"] {
+  background-color: red ;
+}
+
+.grid-item[style*="background-color: blue"] {
+  background-color: blue ;
+}
+
+ 
+
+
+
+
 
 
